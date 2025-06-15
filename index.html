@@ -7,97 +7,74 @@
   <link rel="shortcut icon" href="icone.ico" />
 <style>
   body {
-    font-family: Arial, sans-serif;
-    background: #FFF9E3 url('fond.jpg') no-repeat center top; /* fond jaune clair */
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    color: #2E1A47; /* texte violet très foncé */
-  }
+  font-family: Arial, sans-serif;
+  background: #F9F9F9 url('fond.jpg') no-repeat center top; /* très clair, presque blanc */
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #7D7D7D; /* gris moyen pour texte */
+}
 
-  header {
-    background: #5B2C6F; /* violet profond */
-    color: #F4D35E; /* jaune doré */
-    padding: 20px;
-    text-align: center;
-  }
+header {
+  background: #E8E8E8; /* gris clair chaud */
+  color: #7D7D7D; /* gris moyen */
+  padding: 20px;
+  text-align: center;
+}
 
-  nav {
-    background: #7D3C98; /* violet moyen */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+nav {
+  background: #E8E8E8; /* gris clair chaud */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-  nav a {
-    color: #F4D35E; /* jaune doré */
-    padding: 10px 15px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+nav a {
+  color: #7D7D7D; /* gris moyen */
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  nav a:hover {
-    background: #F4D35E; /* jaune doré */
-    color: #5B2C6F; /* violet profond */
-  }
+nav a:hover {
+  background: #D1D1D1; /* gris clair un peu plus foncé au hover */
+  color: #5A5A5A; /* gris plus foncé au hover */
+}
 
-  .container {
-    background: white;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(91, 44, 111, 0.3);
-    border-radius: 8px;
-  }
+.container {
+  background: white;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: none; /* pas trop voyant */
+  border-radius: 8px;
+}
 
-  .about-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+footer {
+  background: #E8E8E8;
+  color: #7D7D7D;
+  text-align: right;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
 
-  .about-text {
-    flex: 1;
-  }
+a {
+  color: #7D7D7D;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-  .about-photo {
-    flex: 0 0 auto;
-  }
+a:hover {
+  text-decoration: underline;
+  color: #5A5A5A;
+}
 
-  .about-photo img {
-    width: 150px;
-    border-radius: 10px;
-  }
+ul {
+  padding-left: 20px;
+}
 
-  section {
-    margin-bottom: 40px;
-  }
-
-  footer {
-    background: #7D3C98; /* violet moyen */
-    color: #F4D35E; /* jaune doré */
-    text-align: right;
-    padding: 10px 20px;
-    font-size: 0.9em;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-
-  a {
-    color: #5B2C6F; /* violet profond */
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  a:hover {
-    text-decoration: underline;
-    color: #F4D35E; /* jaune doré */
-  }
-
-  ul {
-    padding-left: 20px;
-  }
 </style>
 
 </head>
