@@ -1,23 +1,86 @@
-<!-- notes-de-cours/index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Notes de cours</title>
-  <link rel="stylesheet" href="../style.css"> <!-- ou créer un fichier CSS local -->
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      background: #F9F9F9;
+      color: #000000;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #E8E8E8;
+      padding: 20px;
+      text-align: center;
+      color: #000000;
+    }
+
+    nav {
+      background: #E8E8E8;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 15px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      border-radius: 4px;
+    }
+
+    nav a:hover {
+      background-color: #D1D1D1;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: #000000;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #000000;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Notes de cours</h1>
     <nav>
-      <a href="../index.html">← Retour à l'accueil</a>
+      <a href="index.html">← Retour à l'accueil</a>
     </nav>
   </header>
   <main>
     <ul>
-      <li><a href="mecanique.pdf">Cours de mécanique (PDF)</a></li>
-      <li><a href="optique.pdf">Cours d’optique (PDF)</a></li>
-      <li><a href="thermodynamique.pdf">Cours de thermodynamique (PDF)</a></li>
+      <li><a href="mecanique.pdf" target="_blank">Cours de mécanique (PDF)</a></li>
+      <li><a href="optique.pdf" target="_blank">Cours d’optique (PDF)</a></li>
+      <li><a href="thermodynamique.pdf" target="_blank">Cours de thermodynamique (PDF)</a></li>
     </ul>
   </main>
 </body>
