@@ -3,50 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <title>Notes de cours</title>
-  <link rel="stylesheet" href="../style.css" />
   <style>
     body {
-      background: #F9F9F9;
-      color: #000000;
+      background: #fdfdfd;
+      color: #222222;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
 
     header {
-      background: #E8E8E8;
+      background: #eaf3ff;
       padding: 20px;
       text-align: center;
-      color: #000000;
+      color: #222222;
+      border-bottom: 2px solid #1e90ff;
     }
 
     nav {
-      background: #E8E8E8;
+      background: #f0f8ff;
       text-align: center;
-      padding: 10px 0;
+      padding: 12px 0;
+      border-bottom: 1px solid #c8dfff;
     }
 
     nav a {
-      color: #000000;
+      color: #1e90ff;
       text-decoration: none;
-      font-weight: 600;
-      padding: 8px 15px;
+      font-weight: 700;
+      padding: 10px 18px;
       display: inline-block;
-      transition: background-color 0.3s ease;
-      border-radius: 4px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     nav a:hover {
-      background-color: #D1D1D1;
+      background-color: #d6ebff;
+      color: #005ecb;
       text-decoration: underline;
     }
 
     main {
       max-width: 900px;
-      margin: 30px auto;
+      margin: 40px auto;
       background: white;
-      padding: 20px;
-      border-radius: 8px;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(30, 144, 255, 0.1);
     }
 
     ul {
@@ -54,24 +57,26 @@
     }
 
     li {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      font-size: 1.1em;
     }
 
     a {
-      color: #000000;
+      color: #1e90ff;
       font-weight: 600;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     a:hover {
       text-decoration: underline;
-      color: #000000;
+      color: #005ecb;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Notes de cours et TP </h1>
+    <h1>Notes de cours et TP</h1>
     <nav>
       <a href="index.html">← Retour à l'accueil</a>
     </nav>
@@ -79,8 +84,7 @@
   <main>
     <ul>
       <li><a href="optique2.pdf" target="_blank">TP2 d’optique</a></li>
-            <li><a href="optique3.pdf" target="_blank">TP3 d’optique</a></li>
-
+      <li><a href="optique3.pdf" target="_blank">TP3 d’optique</a></li>
       <li><a href="dm.pdf" target="_blank">DM d'optique</a></li>
     </ul>
   </main>
