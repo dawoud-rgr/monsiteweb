@@ -5,54 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dawoud ROGER</title>
   <link rel="shortcut icon" href="icone.ico" />
-<style>
+  <style>
 body {
   font-family: Arial, sans-serif;
-  background: #F9F9F9 url('fond.jpg') no-repeat center top;
+  background: #0b0f2a url('fond.jpg') no-repeat center top;
   background-size: cover;
   margin: 0;
   padding: 0;
-  color: #000000; /* texte en noir */
+  color: #f5f5f5;
 }
 
 header {
-  background: #E8E8E8;
-  color: #000000; /* texte noir */
+  background: rgba(20, 20, 50, 0.8);
+  color: #ffffff;
   padding: 20px;
   text-align: center;
+  border-bottom: 2px solid #9ea9ff;
 }
 
 nav {
-  background: #E8E8E8;
+  background: rgba(20, 20, 50, 0.6);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 nav a {
-  color: #000000; /* liens en noir */
+  color: #9ea9ff;
   padding: 10px 15px;
   text-decoration: none;
+  font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-  background: #D1D1D1;
-  color: #000000;
+  background: rgba(255, 255, 255, 0.1);
+  color: #a86ef2;
 }
 
 .container {
-  background: white;
+  background: rgba(15, 15, 35, 0.85);
   max-width: 900px;
   margin: auto;
   padding: 20px;
-  box-shadow: none;
   border-radius: 8px;
+  box-shadow: 0 0 20px rgba(158, 169, 255, 0.15);
 }
 
 footer {
-  background: #E8E8E8;
-  color: #000000; /* texte noir */
+  background: rgba(20, 20, 50, 0.8);
+  color: #cccccc;
   text-align: right;
   padding: 10px 20px;
   font-size: 0.9em;
@@ -61,40 +63,66 @@ footer {
 }
 
 a {
-  color: #000000;
+  color: #9ea9ff;
   text-decoration: none;
   font-weight: 600;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #000000;
+  color: #a86ef2;
 }
 
 ul {
   padding-left: 20px;
 }
 
-</style>
+#astrophoto {
+  margin-top: 40px;
+}
 
+.astro-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.astro-item {
+  max-width: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(158, 169, 255, 0.1);
+  text-align: center;
+  color: #f5f5f5;
+}
+
+.astro-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #9ea9ff;
+}
+  </style>
 </head>
+
 <body>
 
   <header>
     <h1>Dawoud ROGER</h1>
     <p>Étudiant en licence de physique – Université de Bordeaux</p>
   </header>
- <nav>
+
+  <nav>
     <a href="#apropos">À propos</a>
     <a href="#cv">CV</a>
     <a href="#physique">Physique</a>
     <a href="#ressources">Ressources</a>
+    <a href="#astrophoto">Astrophotographie</a>
   </nav>
- 
 
   <div class="container">
-
-    
 
     <section id="cv">
       <h2>CV</h2>
@@ -106,38 +134,51 @@ ul {
       <ul>
         <li>2024–2025 : Licence 2 de Physique – Université de Bordeaux (2ème de ma promo, notamment major d'algèbre)</li>
         <li>2022–2024 : Licence 1 et 2 de Physique-Chimie – Université d'Angers</li>
-        <li>2022 : Baccalauréat général avec spécialitées Mathématiques et Physique-Chimie, Lycée François Magendie</li>
-        <li> 2019 : Brevet des collèges marocains, collège Alexandre (ISO), Casablanca</li>
+        <li>2022 : Baccalauréat général avec spécialités Mathématiques et Physique-Chimie, Lycée François Magendie</li>
+        <li>2019 : Brevet des collèges marocain, collège Alexandre (ISO), Casablanca</li>
       </ul>
 
       <h3>Compétences</h3>
       <ul>
         <li>Langages : Python, C, LaTeX</li>
-        <li>Physique : électromagnétisme, physique quantique, optique, thermodynamique, mécanique etc</li>
+        <li>Physique : électromagnétisme, physique quantique, optique, thermodynamique, mécanique, etc.</li>
         <li>Simulation numérique, analyse de données</li>
       </ul>
     </section>
 
-<section id="physique">
-  <h2>Physique</h2>
-  <ul>
-    <li><a href="stokes.pdf" target="_blank">Projet sur les paramètres de Stokes</a></li>
-    <li><a href="poster.pdf" target="_blank">Méthode de Newton-Raphson complexe</a></li>
-    <li>Projet sur les ordinateurs quantiques et applications</li>
-  </ul>
-</section>
-
+    <section id="physique">
+      <h2>Physique</h2>
+      <ul>
+        <li><a href="stokes.pdf" target="_blank">Projet sur les paramètres de Stokes</a></li>
+        <li><a href="poster.pdf" target="_blank">Méthode de Newton-Raphson complexe</a></li>
+        <li>Projet sur les ordinateurs quantiques et applications</li>
+      </ul>
+    </section>
 
     <section id="ressources">
       <h2>Ressources (pas à jour)</h2>
       <ul>
-<li><a href="deuxdex.html">Comptes rendus et notes de cours</a></li>
+        <li><a href="deuxdex.html">Comptes rendus et notes de cours</a></li>
         <li><a href="#">Codes Python</a></li>
         <li><a href="#">Liens utiles</a></li>
       </ul>
     </section>
 
-<section id="apropos">
+    <section id="astrophoto">
+      <h2>Astrophotographie</h2>
+      <div class="astro-gallery">
+        <div class="astro-item">
+          <img src="orion.jpg" alt="Nébuleuse d'Orion et compagnie">
+          <p>Nébuleuse d'Orion (M42), nébuleuse de la flamme et tête de cheval, capturées depuis Saucats avec un objectif Samyang 135mm.</p>
+        </div>
+        <div class="astro-item">
+          <img src="andro.jpg" alt="Andromède">
+          <p>Galaxie d'Andromède (Messier 31), à l'aide d'un Samyang 135mm.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos">
       <h2>À propos</h2>
       <div class="about-section">
         <div class="about-text">
