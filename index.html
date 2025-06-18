@@ -132,7 +132,7 @@ ul {
   user-select: none;
 }
 
-/* Navigation flèches */
+/* Navigation flèches - sans fond ovale */
 #img-overlay .nav-arrow {
   position: absolute;
   top: 50%;
@@ -143,13 +143,14 @@ ul {
   cursor: pointer;
   user-select: none;
   padding: 0 15px;
-  background: rgba(0,0,0,0.3);
-  border-radius: 50%;
-  transition: background 0.3s;
+  /* Suppression du background et border-radius */
+  background: transparent;
+  border-radius: 0;
+  transition: color 0.3s;
 }
 
 #img-overlay .nav-arrow:hover {
-  background: rgba(0,0,0,0.6);
+  color: #aaa;
 }
 
 #img-overlay .nav-left {
@@ -160,7 +161,7 @@ ul {
   right: 20px;
 }
 
-/* Bouton fermer */
+/* Bouton fermer - sans fond ovale */
 #img-overlay .close-btn {
   position: absolute;
   top: 15px;
@@ -169,14 +170,14 @@ ul {
   color: white;
   cursor: pointer;
   user-select: none;
-  background: rgba(0,0,0,0.3);
-  border-radius: 50%;
-  padding: 5px 12px;
-  transition: background 0.3s;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  transition: color 0.3s;
 }
 
 #img-overlay .close-btn:hover {
-  background: rgba(0,0,0,0.6);
+  color: #aaa;
 }
   </style>
 </head>
