@@ -6,7 +6,6 @@
   <title>Dawoud ROGER</title>
   <link rel="shortcut icon" href="icone.ico" />
   <style>
-<style>
 body {
   font-family: Arial, sans-serif;
   background: #fdfdfd;
@@ -92,6 +91,7 @@ ul {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   text-align: center;
   color: #222222;
+  cursor: zoom-in;
 }
 
 .astro-item img {
@@ -99,9 +99,85 @@ ul {
   height: auto;
   border-radius: 4px;
   border: 1px solid #1e90ff;
+  transition: transform 0.3s ease;
 }
-</style>
 
+.astro-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay lightbox */
+#img-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#img-overlay.active {
+  display: flex;
+}
+
+#img-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.7);
+  user-select: none;
+}
+
+/* Navigation flèches */
+#img-overlay .nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 15px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+#img-overlay .nav-arrow:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+#img-overlay .nav-left {
+  left: 20px;
+}
+
+#img-overlay .nav-right {
+  right: 20px;
+}
+
+/* Bouton fermer */
+#img-overlay .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  padding: 5px 12px;
+  transition: background 0.3s;
+}
+
+#img-overlay .close-btn:hover {
+  background: rgba(0,0,0,0.6);
+}
   </style>
 </head>
 
@@ -167,11 +243,11 @@ ul {
       <h2>Astrophotographie</h2>
       <div class="astro-gallery">
         <div class="astro-item">
-<img src="orion.jpg" alt="orion region">
+          <img src="orion.jpg" alt="orion region" />
           <p>Nébuleuse d'Orion (M42), nébuleuse de la Flamme (NGC 2024) et nébuleuse de la Tête de Cheval (IC 434), capturées depuis Saucats avec un objectif Samyang 135mm, seulement 27min d'intégration le 12 avril 2025.</p>
         </div>
         <div class="astro-item">
-          <img src="andro.jpg" alt="Andromède">
+          <img src="andro.jpg" alt="Andromède" />
           <p>Galaxie d'Andromède (Messier 31), photographié à l'aide d'un Samyang 135mm le 24 octobre 2024 (159*1min=2h39 d'intégration avec APN non défiltré), traité avec Siril.</p>
         </div>
       </div>
@@ -189,9 +265,96 @@ ul {
 
   </div>
 
+  <!-- Overlay lightbox -->
+  <div id="img-overlay" tabindex="0">
+    <span class="close-btn" title="Fermer">&times;</span>
+    <span class="nav-arrow nav-left" title="Image précédente">&#10094;</span>
+    <img src="" alt="Image agrandie" />
+    <span class="nav-arrow nav-right" title="Image suivante">&#10095;</span>
+  </div>
+
   <footer>
     <p>Dernière mise à jour : juin 2025</p>
   </footer>
+
+  <script>
+    (function() {
+      const overlay = document.getElementById('img-overlay');
+      const overlayImg = overlay.querySelector('img');
+      const closeBtn = overlay.querySelector('.close-btn');
+      const prevBtn = overlay.querySelector('.nav-left');
+      const nextBtn = overlay.querySelector('.nav-right');
+      const galleryImages = Array.from(document.querySelectorAll('.astro-item img'));
+      let currentIndex = -1;
+
+      function showOverlay(index) {
+        currentIndex = index;
+        overlayImg.src = galleryImages[currentIndex].src;
+        overlayImg.alt = galleryImages[currentIndex].alt;
+        overlay.classList.add('active');
+        overlay.focus();
+      }
+
+      function hideOverlay() {
+        overlay.classList.remove('active');
+        overlayImg.src = '';
+        overlayImg.alt = '';
+      }
+
+      function showPrev() {
+        if (currentIndex === -1) return;
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        overlayImg.src = galleryImages[currentIndex].src;
+        overlayImg.alt = galleryImages[currentIndex].alt;
+      }
+
+      function showNext() {
+        if (currentIndex === -1) return;
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        overlayImg.src = galleryImages[currentIndex].src;
+        overlayImg.alt = galleryImages[currentIndex].alt;
+      }
+
+      galleryImages.forEach((img, index) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+          showOverlay(index);
+        });
+      });
+
+      closeBtn.addEventListener('click', hideOverlay);
+
+      // Fermer overlay en cliquant sur fond (hors image & boutons)
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          hideOverlay();
+        }
+      });
+
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showPrev();
+      });
+
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showNext();
+      });
+
+      // Navigation clavier (escape, flèches)
+      document.addEventListener('keydown', (e) => {
+        if (!overlay.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+          hideOverlay();
+        } else if (e.key === 'ArrowLeft') {
+          showPrev();
+        } else if (e.key === 'ArrowRight') {
+          showNext();
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
