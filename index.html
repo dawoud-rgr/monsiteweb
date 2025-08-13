@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -15,22 +15,22 @@ body {
 }
 
 header {
-  background: #eaf3ff;
+  background: #ffeaea;
   color: #222222;
   padding: 20px;
   text-align: center;
-  border-bottom: 2px solid #1e90ff;
+  border-bottom: 2px solid #cc0000;
 }
 
 nav {
-  background: #f0f8ff;
+  background: #fff0f0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 nav a {
-  color: #1e90ff;
+  color: #cc0000;
   padding: 10px 15px;
   text-decoration: none;
   font-weight: bold;
@@ -38,8 +38,8 @@ nav a {
 }
 
 nav a:hover {
-  background: #d6ebff;
-  color: #005ecb;
+  background: #ffd6d6;
+  color: #990000;
 }
 
 .container {
@@ -50,7 +50,7 @@ nav a:hover {
 }
 
 footer {
-  background: #eaf3ff;
+  background: #ffeaea;
   color: #444444;
   text-align: right;
   padding: 10px 20px;
@@ -58,14 +58,14 @@ footer {
 }
 
 a {
-  color: #1e90ff;
+  color: #cc0000;
   text-decoration: none;
   font-weight: 600;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #005ecb;
+  color: #990000;
 }
 
 ul {
@@ -85,7 +85,7 @@ ul {
 
 .astro-item {
   max-width: 300px;
-  background: #f7f9fb;
+  background: #fdf4f4;
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -98,7 +98,7 @@ ul {
   width: 100%;
   height: auto;
   border-radius: 4px;
-  border: 1px solid #1e90ff;
+  border: 1px solid #cc0000;
   transition: transform 0.3s ease;
 }
 
@@ -132,7 +132,7 @@ ul {
   user-select: none;
 }
 
-/* Navigation flèches - sans fond ovale */
+/* Navigation arrows */
 #img-overlay .nav-arrow {
   position: absolute;
   top: 50%;
@@ -143,7 +143,6 @@ ul {
   cursor: pointer;
   user-select: none;
   padding: 0 15px;
-  /* Suppression du background et border-radius */
   background: transparent;
   border-radius: 0;
   transition: color 0.3s;
@@ -161,7 +160,7 @@ ul {
   right: 20px;
 }
 
-/* Bouton fermer - sans fond ovale */
+/* Close button */
 #img-overlay .close-btn {
   position: absolute;
   top: 15px;
@@ -186,81 +185,81 @@ ul {
 
   <header>
     <h1>Dawoud ROGER</h1>
-    <p>Étudiant en licence de physique – Université Paris-Saclay</p>
+    <p>Physics undergraduate – University of Paris-Saclay</p>
   </header>
 
   <nav>
-    <a href="#apropos">À propos</a>
+    <a href="#about">About</a>
     <a href="#cv">CV</a>
-    <a href="#physique">Physique</a>
-    <a href="#ressources">Ressources</a>
-    <a href="#astrophoto">Astrophotographie</a>
+    <a href="#physics">Physics</a>
+    <a href="#resources">Resources</a>
+    <a href="#astrophoto">Astrophotography</a>
   </nav>
 
   <div class="container">
 
     <section id="cv">
       <h2>CV</h2>
-      <p>Vous pouvez télécharger mon CV en PDF ici :
-        <a href="cvE.pdf" target="_blank">Télécharger le CV</a>
+      <p>You can download my CV in PDF here:
+        <a href="cvE.pdf" target="_blank">Download CV</a>
       </p>
 
-      <h3>Formation</h3>
+      <h3>Education</h3>
       <ul>
-        <li>2025-2026 : Licence 3 de Physique – Université Paris-Saclay</li>
-        <li>2024–2025 : Licence 2 de Physique – Université de Bordeaux (2ème de ma promo, notamment major d'algèbre)</li>
-        <li>2022–2024 : Licence 1 et 2 de Physique-Chimie – Université d'Angers</li>
-        <li>2022 : Baccalauréat général avec spécialités Mathématiques et Physique-Chimie, Lycée François Magendie</li>
-        <li>2019 : Brevet des collèges marocain, collège Alexandre (ISO), Casablanca</li>
+        <li>2025–2026: Bachelor’s Degree in Physics – University of Paris-Saclay</li>
+        <li>2024–2025: Bachelor’s Degree Year 2 in Physics – University of Bordeaux (2nd in class, top in algebra)</li>
+        <li>2022–2024: Bachelor’s Degree Years 1 & 2 in Physics-Chemistry – University of Angers</li>
+        <li>2022: French Baccalauréat with majors in Mathematics and Physics-Chemistry, Lycée François Magendie</li>
+        <li>2019: Moroccan Middle School Certificate, Collège Alexandre (ISO), Casablanca</li>
       </ul>
 
-      <h3>Compétences</h3>
+      <h3>Skills</h3>
       <ul>
-         <li>Langues : Anglais (C1 or above), Français (Natal) et Arabe littéraire (Natal)</li>
-        <li>Langages : Python, C, LaTeX</li>
-        <li>Physique : électromagnétisme, physique quantique, optique, thermodynamique, mécanique, etc.</li>
-        <li>Simulation numérique, analyse de données</li>
-      </ul>
-    </section>
-
-    <section id="physique">
-      <h2>Physique</h2>
-      <ul>
-        <li><a href="stokes.pdf" target="_blank">Projet sur les paramètres de Stokes</a></li>
-        <li><a href="poster.pdf" target="_blank">Méthode de Newton-Raphson complexe</a></li>
-        <li>Projet sur les ordinateurs quantiques et applications</li>
+        <li>Languages: English (C1+), French (Native), Classical Arabic (Native)</li>
+        <li>Programming: Python, C, LaTeX</li>
+        <li>Physics: Electromagnetism, Quantum Physics, Optics, Thermodynamics, Mechanics, etc.</li>
+        <li>Numerical simulation, data analysis</li>
       </ul>
     </section>
 
-    <section id="ressources">
-      <h2>Ressources (pas à jour)</h2>
+    <section id="physics">
+      <h2>Physics</h2>
       <ul>
-        <li><a href="deuxdex.html">Comptes rendus et notes de cours</a></li>
-        <li><a href="#">Codes Python</a></li>
-        <li><a href="#">Liens utiles</a></li>
+        <li><a href="stokes.pdf" target="_blank">Project on Stokes parameters</a></li>
+        <li><a href="poster.pdf" target="_blank">Complex Newton-Raphson Method</a></li>
+        <li>Project on quantum computers and applications</li>
+      </ul>
+    </section>
+
+    <section id="resources">
+      <h2>Resources (outdated)</h2>
+      <ul>
+        <li><a href="deuxdex.html">Lab reports and lecture notes</a></li>
+        <li><a href="#">Python codes</a></li>
+        <li><a href="#">Useful links</a></li>
       </ul>
     </section>
 
     <section id="astrophoto">
-      <h2>Astrophotographie</h2>
+      <h2>Astrophotography</h2>
       <div class="astro-gallery">
         <div class="astro-item">
-          <img src="orion.jpg" alt="orion region" />
-          <p>Nébuleuse d'Orion (M42), nébuleuse de la Flamme (NGC 2024) et nébuleuse de la Tête de Cheval (IC 434), capturées depuis Saucats avec un objectif Samyang 135mm, seulement 27min d'intégration le 12 avril 2025.</p>
+          <img src="orion.jpg" alt="Orion region" />
+          <p>Orion Nebula (M42), Flame Nebula (NGC 2024) and Horsehead Nebula (IC 434), captured from Saucats with a Samyang 135mm lens, only 27 min of integration on April 12, 2025.</p>
         </div>
         <div class="astro-item">
-          <img src="andro.jpg" alt="Andromède" />
-          <p>Galaxie d'Andromède (Messier 31), photographié à l'aide d'un Samyang 135mm le 24 octobre 2024 (159*1min=2h39 d'intégration avec APN non défiltré), traité avec Siril.</p>
+          <img src="andro.jpg" alt="Andromeda" />
+          <p>Andromeda Galaxy (Messier 31), photographed using a Samyang 135mm lens on October 24, 2024 (159 × 1 min = 2h39 integration, unmodified DSLR), processed with Siril.</p>
         </div>
       </div>
     </section>
 
-    <section id="apropos">
-      <h2>À propos</h2>
+    <section id="about">
+      <h2>About</h2>
       <div class="about-section">
         <div class="about-text">
-          <p><strong>Email :</strong> dawoudroger@gmail.com<br>
-          <strong>Téléphone :</strong> 07 77 26 59 25</p>
+          <p><strong>Email:</strong> dawoudroger@gmail.com<br>
+          <strong>Phone:</strong> +33 7 77 26 59 25</p>
         </div>
       </div>
     </section>
@@ -269,14 +268,14 @@ ul {
 
   <!-- Overlay lightbox -->
   <div id="img-overlay" tabindex="0">
-    <span class="close-btn" title="Fermer">&times;</span>
-    <span class="nav-arrow nav-left" title="Image précédente">&#10094;</span>
-    <img src="" alt="Image agrandie" />
-    <span class="nav-arrow nav-right" title="Image suivante">&#10095;</span>
+    <span class="close-btn" title="Close">&times;</span>
+    <span class="nav-arrow nav-left" title="Previous image">&#10094;</span>
+    <img src="" alt="Enlarged image" />
+    <span class="nav-arrow nav-right" title="Next image">&#10095;</span>
   </div>
 
   <footer>
-    <p>Dernière mise à jour : juin 2025</p>
+    <p>Last updated: June 2025</p>
   </footer>
 
   <script>
@@ -326,7 +325,6 @@ ul {
 
       closeBtn.addEventListener('click', hideOverlay);
 
-      // Fermer overlay en cliquant sur fond (hors image & boutons)
       overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
           hideOverlay();
@@ -343,10 +341,8 @@ ul {
         showNext();
       });
 
-      // Navigation clavier (escape, flèches)
       document.addEventListener('keydown', (e) => {
         if (!overlay.classList.contains('active')) return;
-
         if (e.key === 'Escape') {
           hideOverlay();
         } else if (e.key === 'ArrowLeft') {
