@@ -2,89 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Lecture Notes</title>
+  <title>Lecture Notes | Dawoud Roger</title>
   <style>
-    body {
-      background: #fdfdfd;
-      color: #222222;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #ffeaea;
-      padding: 20px;
-      text-align: center;
-      color: #222222;
-      border-bottom: 2px solid #cc0000;
-    }
-
-    nav {
-      background: #fff0f0;
-      text-align: center;
-      padding: 12px 0;
-      border-bottom: 1px solid #f5cccc;
-    }
-
-    nav a {
-      color: #cc0000;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 10px 18px;
-      display: inline-block;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #ffd6d6;
-      color: #990000;
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(204, 0, 0, 0.1);
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 14px;
-      font-size: 1.1em;
-    }
-
-    a {
-      color: #cc0000;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      color: #990000;
-    }
+    body { font-family: Arial, sans-serif; background: #fdfdfd; margin: 0; padding: 0; }
+    header { background: #ffeaea; padding: 30px; text-align: center; border-bottom: 2px solid #cc0000; }
+    main { max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th { text-align: left; background: #fff0f0; padding: 12px; border-bottom: 2px solid #cc0000; }
+    td { padding: 12px; border-bottom: 1px solid #eee; }
+    
+    .tag { background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; text-transform: uppercase; }
+    .btn-back { display: inline-block; margin-bottom: 20px; color: #cc0000; text-decoration: none; font-weight: bold; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Lecture Notes & Lab Work</h1>
-    <nav>
-      <a href="index.html">← Back to Home</a>
-    </nav>
+    <h1>Lecture Notes & Academic Work</h1>
+    <p>Physics Undergraduate Repository</p>
   </header>
   <main>
-    <ul>
-      
-    </ul>
+    <a href="index.html" class="btn-back">← Return to Portfolio</a>
+    
+    <h3>Current Semester (L3)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Key Topics</th>
+          <th>Resource</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Quantum Mechanics</td>
+          <td>Perturbation theory, Angular momentum</td>
+          <td><a href="#">Notes.pdf</a></td>
+        </tr>
+        <tr>
+          <td>Statistical Physics</td>
+          <td>Bose-Einstein Condensates</td>
+          <td><a href="#">Notes.pdf</a></td>
+        </tr>
+        <tr>
+          <td>Electromagnetism</td>
+          <td>Dielectrics & Magnetic media</td>
+          <td><a href="#">Report.pdf</a></td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 </body>
 </html>
