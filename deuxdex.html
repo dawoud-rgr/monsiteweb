@@ -2,55 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Lecture Notes | Dawoud Roger</title>
+  <title>Reports | Dawoud Roger</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #fdfdfd; margin: 0; padding: 0; }
-    header { background: #ffeaea; padding: 30px; text-align: center; border-bottom: 2px solid #cc0000; }
-    main { max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-    
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th { text-align: left; background: #fff0f0; padding: 12px; border-bottom: 2px solid #cc0000; }
-    td { padding: 12px; border-bottom: 1px solid #eee; }
-    
-    .tag { background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; text-transform: uppercase; }
-    .btn-back { display: inline-block; margin-bottom: 20px; color: #cc0000; text-decoration: none; font-weight: bold; }
+    :root {
+      --primary: #cc0000;
+      --bg: #fdfdfd;
+      --text: #222222;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffeaea;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(204, 0, 0, 0.08);
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn-back:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      color: var(--primary);
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th {
+      text-align: left;
+      background: #fffafa;
+      padding: 12px;
+      border-bottom: 2px solid #f5cccc;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+    }
+
+    tr:hover {
+      background-color: #fdfdfd;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .tag {
+      font-size: 0.75em;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #eee;
+      color: #666;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Lecture Notes & Academic Work</h1>
-    <p>Physics Undergraduate Repository</p>
+    <h1>Academic Reports</h1>
+    <p>Physics Lab Work and Theoretical Assignments</p>
   </header>
+
   <main>
-    <a href="index.html" class="btn-back">← Return to Portfolio</a>
-    
-    <h3>Current Semester (L3)</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Subject</th>
-          <th>Key Topics</th>
-          <th>Resource</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Quantum Mechanics</td>
-          <td>Perturbation theory, Angular momentum</td>
-          <td><a href="#">Notes.pdf</a></td>
-        </tr>
-        <tr>
-          <td>Statistical Physics</td>
-          <td>Bose-Einstein Condensates</td>
-          <td><a href="#">Notes.pdf</a></td>
-        </tr>
-        <tr>
-          <td>Electromagnetism</td>
-          <td>Dielectrics & Magnetic media</td>
-          <td><a href="#">Report.pdf</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <a href="index.html" class="btn-back">← Back to Portfolio</a>
+
+    <section>
+      <h2>Experimental Physics (TP)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Subject</th>
+            <th>File</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag">Quantum</span></td>
+            <td>Résonance Magnétique Nucléaire (RMN)</td>
+            <td><a href="Tp_RMN.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Electromagnetism</span></td>
+            <td>Guides d’ondes</td>
+            <td><a href="TP_GUIDES_ONDES.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Thermodynamics</span></td>
+            <td>Vapeur saturante</td>
+            <td><a href="TP_Thermo_vapeur_saturante.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Thermodynamics</span></td>
+            <td>Moteur Stirling</td>
+            <td><a href="TP_stirling.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Thermodynamics</span></td>
+            <td>Pompe à chaleur</td>
+            <td><a href="TP_Pompe_à_chaleur.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Fluid Dynamics</span></td>
+            <td>Mécanique des Fluides</td>
+            <td><a href="TP_Meca_Flu.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Fluid Dynamics</span></td>
+            <td>Tube de Pitot</td>
+            <td><a href="TP_pitot.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Fluid Dynamics</span></td>
+            <td>Déversoirs</td>
+            <td><a href="TP_Déversoirs.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Soft Matter</span></td>
+            <td>Milieux Poreux</td>
+            <td><a href="TP_Milieux_Poreux.pdf" target="_blank">PDF</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Theoretical & Computational</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Description</th>
+            <th>File</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag">Optics</span></td>
+            <td>DM L2 Optique</td>
+            <td><a href="DML2Optique.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Computing</span></td>
+            <td>Projet Python</td>
+            <td><a href="Projet_Python.pdf" target="_blank">PDF</a></td>
+          </tr>
+          <tr>
+            <td><span class="tag">Team Work</span></td>
+            <td>Roger & Graff Report</td>
+            <td><a href="Roger_Graff_Groupe11.pdf" target="_blank">PDF</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </main>
+
 </body>
 </html>
