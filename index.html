@@ -3,356 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dawoud ROGER</title>
-  <link rel="shortcut icon" href="icone.ico" />
+  <title>Dawoud Roger | Physics Portfolio</title>
   <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #fdfdfd;
-  margin: 0;
-  padding: 0;
-  color: #222222;
-}
+    :root {
+      --primary: #cc0000;
+      --primary-dark: #990000;
+      --bg: #fdfdfd;
+      --card-bg: #ffffff;
+      --text: #222222;
+      --accent-bg: #ffeaea;
+    }
 
-header {
-  background: #ffeaea;
-  color: #222222;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid #cc0000;
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      line-height: 1.6;
+      color: var(--text);
+    }
 
-nav {
-  background: #fff0f0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+    header {
+      background: var(--accent-bg);
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+    }
 
-nav a {
-  color: #cc0000;
-  padding: 10px 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+    nav {
+      background: #fff0f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid #f5cccc;
+    }
 
-nav a:hover {
-  background: #ffd6d6;
-  color: #990000;
-}
+    nav a {
+      color: var(--primary);
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-.container {
-  background: #ffffff;
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
+    nav a:hover {
+      background: #ffd6d6;
+    }
 
-footer {
-  background: #ffeaea;
-  color: #444444;
-  text-align: right;
-  padding: 10px 20px;
-  font-size: 0.9em;
-}
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
 
-a {
-  color: #cc0000;
-  text-decoration: none;
-  font-weight: 600;
-}
+    section {
+      margin-bottom: 50px;
+      padding-top: 20px;
+    }
 
-a:hover {
-  text-decoration: underline;
-  color: #990000;
-}
+    h2 {
+      border-left: 5px solid var(--primary);
+      padding-left: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-ul {
-  padding-left: 20px;
-}
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
 
-#astrophoto {
-  margin-top: 40px;
-}
+    .astro-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
 
-.astro-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
+    .astro-item {
+      background: var(--card-bg);
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
 
-.astro-item {
-  max-width: 300px;
-  background: #fdf4f4;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  text-align: center;
-  color: #222222;
-  cursor: zoom-in;
-}
+    .astro-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
 
-.astro-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  border: 1px solid #cc0000;
-  transition: transform 0.3s ease;
-}
+    .astro-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
 
-.astro-item img:hover {
-  transform: scale(1.05);
-}
+    .astro-content { padding: 15px; font-size: 0.95rem; }
 
-/* Overlay lightbox */
-#img-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
+    footer {
+      background: var(--accent-bg);
+      padding: 30px;
+      text-align: center;
+      margin-top: 50px;
+    }
 
-#img-overlay.active {
-  display: flex;
-}
-
-#img-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 0 30px rgba(255,255,255,0.7);
-  user-select: none;
-}
-
-/* Navigation arrows */
-#img-overlay .nav-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  font-size: 3rem;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  padding: 0 15px;
-  background: transparent;
-  border-radius: 0;
-  transition: color 0.3s;
-}
-
-#img-overlay .nav-arrow:hover {
-  color: #aaa;
-}
-
-#img-overlay .nav-left {
-  left: 20px;
-}
-
-#img-overlay .nav-right {
-  right: 20px;
-}
-
-/* Close button */
-#img-overlay .close-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 2.5rem;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  transition: color 0.3s;
-}
-
-#img-overlay .close-btn:hover {
-  color: #aaa;
-}
+    @media (max-width: 768px) {
+      .cv-grid { grid-template-columns: 1fr; }
+    }
+    
+    /* Lightbox Styles remain similar to your original */
+    #img-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 1000; }
+    #img-overlay.active { display: flex; }
+    #img-overlay img { max-width: 90%; max-height: 80%; border: 2px solid white; }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <h1>Dawoud ROGER</h1>
-    <p>Physics undergraduate – University of Paris-Saclay</p>
-  </header>
+<header>
+  <h1>Dawoud ROGER</h1>
+  <p>Theoretical Physics Aspirant | Undergraduate at Université Paris-Saclay</p>
+</header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#cv">CV</a>
-    <a href="#physics">Physics</a>
-    <a href="#resources">Resources</a>
-    <a href="#astrophoto">Astrophotography</a>
-  </nav>
+<nav>
+  <a href="#cv">CV</a>
+  <a href="#physics">Physics</a>
+  <a href="#astrophoto">Astrophotography</a>
+  <a href="#resources">Resources</a>
+  <a href="#about">Contact</a>
+</nav>
 
-  <div class="container">
+<div class="container">
+  <section id="cv">
+    <h2>Academic Profile</h2>
+    <div class="cv-grid">
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li><strong>2025–2026:</strong> L3 Physics, Paris-Saclay</li>
+          <li><strong>2024–2025:</strong> L2 Physics, Bordeaux (Ranked 2nd)</li>
+          <li><strong>2022–2024:</strong> L1/L2 PC, Angers</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Technical Skills</h3>
+        <ul>
+          <li><strong>Languages:</strong> Python, C, LaTeX</li>
+          <li><strong>Theory:</strong> QM, Statistical Physics, Electrodynamics</li>
+          <li><strong>Languages:</strong> English (C1+), Arabic, French</li>
+        </ul>
+      </div>
+    </div>
+    <p><a href="cvE.pdf" target="_blank">📄 Download Full Curriculum Vitae</a></p>
+  </section>
 
-    <section id="cv">
-      <h2>CV</h2>
-      <p>CV :
-        <a href="cvE.pdf" target="_blank">Download</a>
-      </p>
+  <section id="physics">
+    <h2>Research & Projects</h2>
+    <ul>
+      <li><strong>Stokes Parameters:</strong> Bibliographic study on polarization formalisms.</li>
+      <li><strong>Complex Newton-Raphson:</strong> Numerical implementation for root-finding in the complex plane.</li>
+      <li><strong>Quantum Computing:</strong> Analysis of hardware implementations and algorithmic advantages.</li>
+    </ul>
+  </section>
 
-      <h3>Education</h3>
-      <ul>
-        <li>2025–2026: Licence Year 3 in Physics (last year) – Université Paris-Saclay</li>
-        <li>2024–2025: Licence Year 2 in Physics – Université de Bordeaux (ranked 2nd)</li>
-        <li>2022–2024: Licence Years 1 & 2 in Physics-Chemistry – Université d’Angers</li>
-        <li>2022: French Baccalauréat with majors in Mathematics and Physics-Chemistry, Lycée François Magendie</li>
-        
-      </ul>
-
-      <h3>Skills</h3>
-      <ul>
-        <li>Languages: English (C1+), French (Native), Classical Arabic (Native)</li>
-        <li>Programming: Python, C, LaTeX</li>
-        <li>Physics: Electromagnetism, Quantum Physics, Optics, Thermodynamics, Mechanics, etc.</li>
-        <li>Numerical simulation, data analysis</li>
-      </ul>
-    </section>
-
-    <section id="physics">
-      <h2>Physics</h2>
-      <ul>
-        <li>Bibliographic project on Stokes parameters</li>
-        <li>Complex Newton-Raphson Method</li>
-        <li>Project on quantum computers and applications</li>
-      </ul>
-    </section>
-
-    <section id="resources">
-      <h2>Resources</h2>
-      <ul>
-        <li><a href="deuxdex.html">Lab reports and lecture notes</a></li>
-        <li><a href="#">Python codes</a></li>
-        <li><a href="links.html">Useful links</a></li>
-      </ul>
-    </section>
-
-    <section id="astrophoto">
-      <h2>Astrophotography</h2>
-      <div class="astro-gallery">
-        <div class="astro-item">
-          <img src="orion.jpg" alt="Orion region" />
-          <p>Orion Nebula (M42), Flame Nebula (NGC 2024) and Horsehead Nebula (IC 434), captured from Saucats with a Samyang 135mm lens, only 27 min of integration on April 12, 2025.</p>
-        </div>
-        <div class="astro-item">
-          <img src="andro.jpg" alt="Andromeda" />
-          <p>Andromeda Galaxy (Messier 31), photographed using a Samyang 135mm lens on October 24, 2024 (159 × 1 min = 2h39 integration, unmodified DSLR), processed with Siril.</p>
+  <section id="astrophoto">
+    <h2>Astrophotography</h2>
+    <div class="astro-grid">
+      <div class="astro-item">
+        <img src="orion.jpg" alt="Orion Region" class="gallery-img">
+        <div class="astro-content">
+          <strong>The Orion Complex</strong><br>
+          Samyang 135mm, 27 min integration. April 2025.
         </div>
       </div>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <div class="about-section">
-        <div class="about-text">
-          <p><strong>Email:</strong> dawoudroger@gmail.com<br>
-          <strong>Phone:</strong> +33 7 77 26 59 25</p>
+      <div class="astro-item">
+        <img src="andro.jpg" alt="Andromeda" class="gallery-img">
+        <div class="astro-content">
+          <strong>M31 - Andromeda</strong><br>
+          159 x 60s (2h39m), Stock DSLR. Oct 2024.
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </div>
+  <section id="resources">
+    <h2>Academic Resources</h2>
+    <ul>
+      <li><a href="deuxdex.html">Lecture Notes & Lab Reports</a></li>
+      <li><a href="#">Python Simulations</a></li>
+    </ul>
+  </section>
 
-  <!-- Overlay lightbox -->
-  <div id="img-overlay" tabindex="0">
-    <span class="close-btn" title="Close">&times;</span>
-    <span class="nav-arrow nav-left" title="Previous image">&#10094;</span>
-    <img src="" alt="Enlarged image" />
-    <span class="nav-arrow nav-right" title="Next image">&#10095;</span>
-  </div>
+  <section id="about">
+    <h2>Contact</h2>
+    <p>Email: <strong>dawoudroger@gmail.com</strong></p>
+  </section>
+</div>
 
-  <footer>
-    <p>Last updated: August 2025</p>
-  </footer>
+<footer>
+  <p>Last updated: February 2026 | Built with focus and precision.</p>
+</footer>
 
-  <script>
-    (function() {
-      const overlay = document.getElementById('img-overlay');
-      const overlayImg = overlay.querySelector('img');
-      const closeBtn = overlay.querySelector('.close-btn');
-      const prevBtn = overlay.querySelector('.nav-left');
-      const nextBtn = overlay.querySelector('.nav-right');
-      const galleryImages = Array.from(document.querySelectorAll('.astro-item img'));
-      let currentIndex = -1;
-
-      function showOverlay(index) {
-        currentIndex = index;
-        overlayImg.src = galleryImages[currentIndex].src;
-        overlayImg.alt = galleryImages[currentIndex].alt;
-        overlay.classList.add('active');
-        overlay.focus();
-      }
-
-      function hideOverlay() {
-        overlay.classList.remove('active');
-        overlayImg.src = '';
-        overlayImg.alt = '';
-      }
-
-      function showPrev() {
-        if (currentIndex === -1) return;
-        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-        overlayImg.src = galleryImages[currentIndex].src;
-        overlayImg.alt = galleryImages[currentIndex].alt;
-      }
-
-      function showNext() {
-        if (currentIndex === -1) return;
-        currentIndex = (currentIndex + 1) % galleryImages.length;
-        overlayImg.src = galleryImages[currentIndex].src;
-        overlayImg.alt = galleryImages[currentIndex].alt;
-      }
-
-      galleryImages.forEach((img, index) => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', () => {
-          showOverlay(index);
-        });
-      });
-
-      closeBtn.addEventListener('click', hideOverlay);
-
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-          hideOverlay();
-        }
-      });
-
-      prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showPrev();
-      });
-
-      nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showNext();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (!overlay.classList.contains('active')) return;
-        if (e.key === 'Escape') {
-          hideOverlay();
-        } else if (e.key === 'ArrowLeft') {
-          showPrev();
-        } else if (e.key === 'ArrowRight') {
-          showNext();
-        }
-      });
-    })();
-  </script>
+<div id="img-overlay">
+  <img src="" id="overlay-img">
+</div>
 
 </body>
 </html>
