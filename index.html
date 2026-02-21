@@ -1,216 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dawoud Roger | Physics Website</title>
-  <style>
-    :root {
-      --primary: #cc0000;
-      --primary-dark: #990000;
-      --bg: #fdfdfd;
-      --card-bg: #ffffff;
-      --text: #222222;
-      --accent-bg: #ffeaea;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dawoud Roger | Physics Portfolio</title>
+  <style>
+    :root {
+      --primary: #cc0000;
+      --primary-dark: #990000;
+      --bg: #fdfdfd;
+      --card-bg: #ffffff;
+      --text: #222222;
+      --accent-bg: #ffeaea;
+      --border: #f5cccc;
+    }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      margin: 0;
-      line-height: 1.6;
-      color: var(--text);
-    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      line-height: 1.6;
+      color: var(--text);
+    }
 
-    header {
-      background: var(--accent-bg);
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 3px solid var(--primary);
-    }
+    header {
+      background: var(--accent-bg);
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+    }
 
-    nav {
-      background: #fff0f0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid #f5cccc;
-    }
+    nav {
+      background: #fff0f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
 
-    nav a {
-      color: var(--primary);
-      padding: 15px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+    nav a {
+      color: var(--primary);
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-    nav a:hover {
-      background: #ffd6d6;
-    }
+    nav a:hover {
+      background: #ffd6d6;
+    }
 
-    .container {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
 
-    section {
-      margin-bottom: 50px;
-      padding-top: 20px;
-    }
+    section {
+      margin-bottom: 50px;
+      padding-top: 20px;
+    }
 
-    h2 {
-      border-left: 5px solid var(--primary);
-      padding-left: 15px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+    h2 {
+      border-left: 5px solid var(--primary);
+      padding-left: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-    .cv-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
 
-    .astro-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
+    .astro-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
 
-    .astro-item {
-      background: var(--card-bg);
-      border: 1px solid #eee;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
+    .astro-item {
+      background: var(--card-bg);
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-    .astro-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
+    .astro-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
 
-    .astro-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      cursor: zoom-in;
-    }
+    .astro-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
 
-    .astro-content { padding: 15px; font-size: 0.95rem; }
+    .astro-content {
+      padding: 15px;
+      font-size: 0.95rem;
+    }
 
-    footer {
-      background: var(--accent-bg);
-      padding: 30px;
-      text-align: center;
-      margin-top: 50px;
-    }
+    footer {
+      background: var(--accent-bg);
+      padding: 30px;
+      text-align: center;
+      margin-top: 50px;
+      border-top: 1px solid var(--border);
+    }
 
-    @media (max-width: 768px) {
-      .cv-grid { grid-template-columns: 1fr; }
-    }
-    
-    /* Lightbox Styles remain similar to your original */
-    #img-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 1000; }
-    #img-overlay.active { display: flex; }
-    #img-overlay img { max-width: 90%; max-height: 80%; border: 2px solid white; }
-  </style>
+    #img-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #img-overlay.active {
+      display: flex;
+    }
+
+    #img-overlay img {
+      max-width: 90%;
+      max-height: 80%;
+      border: 3px solid white;
+    }
+
+    @media (max-width: 768px) {
+      .cv-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>Dawoud ROGER</h1>
-  <p>Theoretical Physics Aspirant | Undergraduate at Université Paris-Saclay</p>
+  <h1>Dawoud ROGER</h1>
+  <p>Theoretical Physics Aspirant | Undergraduate at Université Paris-Saclay</p>
 </header>
 
 <nav>
-  <a href="#cv">CV</a>
-  <a href="#physics">Physics</a>
-  <a href="#astrophoto">Astrophotography</a>
-  <a href="#resources">Resources</a>
-  <a href="#about">Contact</a>
+  <a href="#cv">CV</a>
+  <a href="#physics">Physics</a>
+  <a href="#astrophoto">Astrophotography</a>
+  <a href="#resources">Resources</a>
+  <a href="#about">Contact</a>
 </nav>
 
 <div class="container">
-  <section id="cv">
-    <h2>Academic Profile</h2>
-    <div class="cv-grid">
-      <div>
-        <h3>Education</h3>
-        <ul>
-          <li><strong>2025–2026:</strong> L3 Physics, Paris-Saclay</li>
-          <li><strong>2024–2025:</strong> L2 Physics, Bordeaux (Ranked 2nd)</li>
-          <li><strong>2022–2024:</strong> L1/L2 PC, Angers</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Technical Skills</h3>
-        <ul>
-          <li><strong>Languages:</strong> Python, C, LaTeX</li>
-          <li><strong>Theory:</strong> QM, Statistical Physics, Electrodynamics</li>
-          <li><strong>Languages:</strong> English (C1+), Arabic, French</li>
-        </ul>
-      </div>
-    </div>
-    <p><a href="CV-DR.pdf" target="_blank">Download Curriculum Vitae</a></p>
-    <p><a href="CV-FR.pdf" target="_blank">Download French Curriculum Vitae</a></p>
-  </section>
+  <section id="cv">
+    <h2>Academic Profile</h2>
+    <div class="cv-grid">
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li><strong>2025–2026:</strong> L3 Physics, Paris-Saclay</li>
+          <li><strong>2024–2025:</strong> L2 Physics, Bordeaux (Ranked 2nd)</li>
+          <li><strong>2022–2024:</strong> L1/L2 PC, Angers</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Technical Skills</h3>
+        <ul>
+          <li><strong>Languages:</strong> Python, C, LaTeX</li>
+          <li><strong>Theory:</strong> QM, Statistical Physics, Electrodynamics</li>
+          <li><strong>Languages:</strong> English (C1+), Arabic, French</li>
+        </ul>
+      </div>
+    </div>
+    <p><a href="CV-DR.pdf" target="_blank" style="color: var(--primary); font-weight: bold;">Download Curriculum Vitae</a></p>
+  </section>
 
-  <section id="physics">
-    <h2>Research & Projects</h2>
-    <ul>
-      <li><strong>Instationnary Schrödinger Equation Simulation:</strong> Python implementation of the resolution of Schrödinger's equation using different sparse matrix formalisms.</li>
-      <li><strong>Gravity waves in deep water regime:</strong>Creation of a tool for the interpretation of experimental results of the generation of waves, making use of Backgroud Oriented Schlieren imaging technique.</li>
-      <li><strong>Stokes Parameters:</strong> Bibliographic study on polarization formalisms.</li>
-      <li><strong>Complex Newton-Raphson:</strong> Numerical implementation for root-finding in the complex plane.</li>
-      <li><strong>Quantum Computing:</strong> Analysis of hardware implementations and algorithmic advantages.</li>
-    </ul>
-  </section>
+  <section id="physics">
+    <h2>Research & Projects</h2>
+    <ul>
+      <li><strong>Instationnary Schrödinger Equation Simulation:</strong> Python implementation of the resolution of Schrödinger's equation using different sparse matrix formalisms.</li>
+      <li><strong>Gravity waves in deep water regime:</strong> Creation of a tool for the interpretation of experimental results using Background Oriented Schlieren (BOS) imaging.</li>
+      <li><strong>Stokes Parameters:</strong> Bibliographic study on polarization formalisms.</li>
+      <li><strong>Complex Newton-Raphson:</strong> Numerical implementation for root-finding in the complex plane.</li>
+      <li><strong>Quantum Computing:</strong> Analysis of hardware implementations and algorithmic advantages.</li>
+    </ul>
+  </section>
 
-  <section id="astrophoto">
-    <h2>Astrophotography</h2>
-    <div class="astro-grid">
-      <div class="astro-item">
-        <img src="orion.jpg" alt="Orion Region" class="gallery-img">
-        <div class="astro-content">
-          <strong>The Orion Complex</strong><br>
-          Samyang 135mm, 27m of integration time, Stock EOS 70D. April 2025.
-        </div>
-      </div>
-      <div class="astro-item">
-        <img src="andro.jpg" alt="Andromeda" class="gallery-img">
-        <div class="astro-content">
-          <strong>M31 - Andromeda</strong><br>
-          Samyang 135ll, 159 x 60s (2h39m of integration time), Stock EOS 70D. Oct 2024.
-        </div>
-      </div>
-    </div>
-  </section>
+  <section id="astrophoto">
+    <h2>Astrophotography</h2>
+    <div class="astro-grid">
+      <div class="astro-item">
+        <img src="orion.jpg" alt="Orion Region" class="gallery-img">
+        <div class="astro-content">
+          <strong>The Orion Complex</strong><br>
+          Samyang 135mm, 27m integration, Stock EOS 70D. April 2025.
+        </div>
+      </div>
+      <div class="astro-item">
+        <img src="andro.jpg" alt="Andromeda" class="gallery-img">
+        <div class="astro-content">
+          <strong>M31 - Andromeda</strong><br>
+          Samyang 135mm, 159 x 60s (2h39m integration), Stock EOS 70D. Oct 2024.
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section id="resources">
-    <h2>Academic Resources</h2>
-    <ul>
-      <li><a href="deuxdex.html">Reports</a></li>
-    </ul>
-  </section>
+  <section id="resources">
+    <h2>Academic Resources</h2>
+    <ul>
+      <li><a href="deuxdex.html" style="color: var(--primary); font-weight: bold;">Reports</a></li>
+    </ul>
+  </section>
 
-  <section id="about">
-    <h2>Contact</h2>
-    <p>Email: <strong>dawoudroger@gmail.com</strong></p>
-  </section>
+  <section id="about">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:dawoudroger@gmail.com" style="color: var(--primary); font-weight: bold;">dawoudroger@gmail.com</a></p>
+  </section>
 </div>
 
 <footer>
-  <p>Last updated: February 2026.</p>
+  <p>Last updated: February 2026.</p>
 </footer>
 
 <div id="img-overlay">
-  <img src="" id="overlay-img">
+  <img src="" id="overlay-img">
 </div>
+
+<script>
+  const overlay = document.getElementById('img-overlay');
+  const overlayImg = document.getElementById('overlay-img');
+  const imgs = document.querySelectorAll('.gallery-img');
+
+  imgs.forEach(img => {
+    img.addEventListener('click', () => {
+      overlay.classList.add('active');
+      overlayImg.src = img.src;
+    });
+  });
+
+  overlay.addEventListener('click', () => {
+    overlay.classList.remove('active');
+  });
+</script>
 
 </body>
 </html>
